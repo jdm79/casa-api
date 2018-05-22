@@ -50,6 +50,12 @@ const Property = {
     timestamps: true,
     paranoid: true,
     tableName: 'properties'
+  },
+  relationships: ({ property }) => {
+    property.prototype.toJSON = () => {
+      const privateAttributes = ['deletedAt', 'updatedAt']
+      return _.omit(this.dataValues, privateAttributes)
+    }
   }
 }
 
