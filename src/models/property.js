@@ -52,8 +52,9 @@ const Property = {
     tableName: 'properties'
   },
   relationships: ({ property }) => {
-    property.prototype.toJSON = () => {
+    property.prototype.toJSON = function () {
       const privateAttributes = ['deletedAt', 'updatedAt']
+      console.log('dataValues', this.dataValues)
       return _.omit(this.dataValues, privateAttributes)
     }
   }

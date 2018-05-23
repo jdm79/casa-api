@@ -2,7 +2,7 @@ const createParanoidColumns = require('./createParanoidColumns')
 const createTimestampColumns = require('./createTimestampColumns')
 
 module.exports = (fields, options) => {
-  const paranoidColumns = options.paranoidColumns
+  const paranoidColumns = options.paranoid
     ? createParanoidColumns()
     : {}
   const timestampColumns = options.timestamps

@@ -1,8 +1,8 @@
-import dovEnv from 'dotenv'
+require('dotenv').config()
 import Sequelize from 'sequelize'
 import propertyModel from './models/property'
 
-dotEnv.config()
+
 
 const modelsList = [
   propertyModel
